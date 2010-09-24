@@ -1,0 +1,36 @@
+group base;
+
+list_item(item) ::= "<li>$item$</li>"
+
+list(items) ::= <<
+<ul>
+$items:list_item()$
+</ul>
+>>
+
+title(name) ::= "<title>$name$</title>"
+
+script_include(file_name) ::= <<
+<script type="text/javascript" src="$file_name$"></script>
+>>
+
+document(head, content) ::= <<
+<html>
+    <head>$head$
+    </head>
+    <body>$content$
+    </body>
+</html>
+>>
+
+table(content) ::= <<
+<table>
+    $content$
+</table>
+>>
+
+row(data) ::= <<
+<tr>
+    $data:{<td>$it$</td>}$
+</tr>
+>>

@@ -1,0 +1,29 @@
+group base;
+
+list_item(item) ::= "$item$,"
+
+list(list_content) ::= <<
+[$list_content:list_item()$]
+>>
+
+title(name) ::= "title=$name$,"
+
+script_include(file_name) ::= <<
+scriptRef="$file_name$",
+>>
+
+document(head, content) ::= <<
+{head={$head$}, body={$content$}}
+>>
+
+table(content) ::= <<
+[
+    $content$
+]
+>>
+
+row(data) ::= <<
+[
+    $data:{\{$it$\}}$
+]
+>>
